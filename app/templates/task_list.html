@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Lista Zadań{% endblock %}
+
+{% block content %}
+    <h2>Lista Zadań (HTML GUI)</h2>
+    <a href="{{ url_for('main.task_create') }}">Dodaj nowe zadanie</a>
+
+    {% if tasks %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tytuł</th>
+                    <th>Status</th>
+                    <th>Utworzono</th>
+                    <th>Użytkownik</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td>{{ task.title }}</td>
+                    <td>{{ 'TAK' if task.is_completed else 'NIE' }}</td>
+                    <td>{{ task.created_at.strftime('%Y-%m-%d') }}</td>
+                    <td>ID: {{ task.user_id }}</td>
+                    <td>
+                        <a href="{{ url_for('main.task_edit', task_id=task.id) }}">Edytuj</a> |
+                        <form method="POST" action="{{ url_for('main.task_delete_html', task_id=task.id) }}" style="display:inline;">
+                            <input type="submit" value="Usuń" onclick="return confirm('Czy na pewno chcesz usunąć to zadanie?');">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Brak zadań. <a href="{{ url_for('main.task_create') }}">Dodaj pierwsze zadanie.</a></p>
+    {% endif %}
+{% endblock %}

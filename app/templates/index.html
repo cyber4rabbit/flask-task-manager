@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Task Manager API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        h1 { color: #333; }
+        .menu-item { margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; background-color: #fff; }
+        .menu-item a { text-decoration: none; color: #007bff; font-weight: bold; }
+        .menu-item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>📋 Flask Task Manager API</h1>
+    <p>Witaj w systemie zarządzania zadaniami. Poniżej znajdziesz główne zasoby API, do których możesz wysyłać żądania (np. za pomocą Postman/Insomnia).</p>
+
+    <h2>Menu i zasoby</h2>
+
+    <div class="menu-item">
+        <strong>Endpoint testowy:</strong> <a href="{{ url_for('main.add_user') }}">/add-user</a>
+        <p><em>Służy do szybkiego utworzenia użytkownika 'admin' (ID=1) wymaganego do przypisywania zadań.</em></p>
+    </div>
+
+    <div class="menu-item">
+        <strong>Zarządzanie zadaniami (CRUD):</strong>
+        <ul>
+            <li><a href="/tasks">GET /tasks</a>: Pobierz listę wszystkich zadań.</li>
+            <li><strong>POST /tasks</strong>: Dodaj nowe zadanie (Wymaga JSON: {"title": "...", "user_id": 1}).</li>
+            <li><strong>GET /tasks/1</strong>: Pobierz szczegóły zadania o ID=1.</li>
+            <li><strong>PUT /tasks/1</strong>: Aktualizuj zadanie (Wymaga JSON).</li>
+            <li><strong>DELETE /tasks/1</strong>: Usuń zadanie.</li>
+        </ul>
+    </div>
+
+    <hr>
+    <p>Status: Uruchomiony.</p>
+</body>
+</html>

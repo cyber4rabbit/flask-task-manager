@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Witaj w Menedżerze Zadań (GUI)</h1>
+    <p>Wybierz sekcję, którą chcesz zarządzać:</p>
+    
+    <div style="display: flex; gap: 20px;">
+        
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; flex: 1;">
+            <h2>📋 Zadania</h2>
+            <p>Zarządzaj listą zadań, ich statusami i przypisaniami.</p>
+            <ul>
+                <li><a href="{{ url_for('main.task_list') }}">Lista wszystkich zadań (Read All)</a></li>
+                <li><a href="{{ url_for('main.task_create') }}">Dodaj nowe zadanie (Create)</a></li>
+            </ul>
+        </div>
+        
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; flex: 1;">
+            <h2>👤 Użytkownicy</h2>
+            <p>Zarządzaj użytkownikami systemu.</p>
+            <ul>
+                <li><a href="{{ url_for('main.user_list') }}">Lista wszystkich użytkowników (Read All)</a></li>
+                <li><a href="{{ url_for('main.user_create') }}">Dodaj nowego użytkownika (Create)</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div style="margin-top: 20px; padding: 10px; background-color: #f0f0f0; border-radius: 5px;">
+        <h3>⚙️ Narzędzia</h3>
+        <p>Endpoint testowy do utworzenia użytkownika `admin` (ID=1): <a href="{{ url_for('main.add_user') }}">/add-user</a></p>
+    </div>
+{% endblock %}

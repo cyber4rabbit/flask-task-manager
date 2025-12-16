@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    
+    <form method="POST">
+        {{ form.hidden_tag() }} 
+        
+        <div class="form-field">
+            {{ form.title.label }}
+            {{ form.title() }}
+            {% for error in form.title.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        
+        <div class="form-field">
+            {{ form.description.label }}
+            {{ form.description() }}
+        </div>
+        
+        <div class="form-field">
+            {{ form.user_id.label }}
+            {{ form.user_id() }}
+            {% for error in form.user_id.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        
+        <div class="form-field">
+            {{ form.is_completed.label }}
+            {{ form.is_completed() }}
+        </div>
+        
+        {{ form.submit() }}
+    </form>
+{% endblock %}

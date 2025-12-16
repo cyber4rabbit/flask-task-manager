@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Lista Użytkowników{% endblock %}
+
+{% block content %}
+    <h2>Lista Użytkowników</h2>
+    <a href="{{ url_for('main.user_create') }}">Dodaj nowego użytkownika</a>
+
+    {% if users %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa Użytkownika</th>
+                    <th>Email</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <a href="{{ url_for('main.user_edit', user_id=user.id) }}">Edytuj</a> |
+                        <form method="POST" action="{{ url_for('main.user_delete_html', user_id=user.id) }}" style="display:inline;">
+                            <input type="submit" value="Usuń" onclick="return confirm('Czy na pewno chcesz usunąć użytkownika? Usunie to też jego zadania!');">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Brak użytkowników.</p>
+    {% endif %}
+{% endblock %}
