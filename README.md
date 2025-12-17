@@ -1,4 +1,4 @@
-# 2. Menedżer Zadań (Flask + SQLAlchemy + Marshmallow)
+# 1. Menedżer Zadań (Flask + SQLAlchemy + Marshmallow)
 
 Flask-task-manager to aplikacja webowa zbudowana na frameworku Flask, służąca do zarządzania zadaniami i użytkownikami. 
 Projekt implementuje pełny CRUD (Create, Read, Update, Delete) w dwóch warstwach: jako REST API (JSON) dla klientów zewnętrznych oraz jako Przyjazny Interfejs GUI dla użytkowników końcowych.
