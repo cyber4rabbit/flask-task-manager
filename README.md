@@ -46,6 +46,7 @@ export FLASK_ENV=development
 Uruchomienie serwera:
 
 Należy uruchomić run.py
+
 Aplikacja będzie dostępna pod adresem: http://127.0.0.1:5000/
 
 Aplikacja jest zaprojektowana tak, aby nawigacja była intuicyjna:
@@ -53,9 +54,14 @@ Aplikacja jest zaprojektowana tak, aby nawigacja była intuicyjna:
 Dashboard (Główna)URL: http://127.0.0.1:5000/ - Centralna strona startowa GUI, która umożliwia przejście do głównych sekcji.
 
 SekcjaFunkcjaURLZadaniaLista 
+
 (Read All)/gui/tasksZadaniaDodaj 
+
 (Create)/gui/tasks/newUżytkownicyLista 
+
 (Read All)/gui/usersUżytkownicyDodaj 
+
 (Create)/gui/users/new3. REST API (JSON)
+
 Endpointy dla klientów zewnętrznych do zarządzania danymi za pomocą JSON.
 
