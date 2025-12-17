@@ -24,7 +24,9 @@ source .venv/bin/activate
 
 Zainstaluj wymagane pakiety Pythona:
 pip install -r requirements.txt
-(Jeśli plik requirements.txt nie istnieje, możesz go wygenerować ręcznie za pomocą pip freeze > requirements.txt po zainstalowaniu Flask, Flask-SQLAlchemy, Flask-Marshmallow, Flask-WTF i marshmallow-sqlalchemy).4. Uruchomienie AplikacjiUstaw zmienną środowiskową (dozwala na tryb deweloperski) i uruchom aplikację:Bash# Ustawienie trybu deweloperskiego.
+(Jeśli plik requirements.txt nie istnieje, możesz go wygenerować ręcznie za pomocą pip freeze > requirements.txt po zainstalowaniu Flask, Flask-SQLAlchemy, Flask-Marshmallow, Flask-WTF i marshmallow-sqlalchemy).4. Uruchomienie Aplikacji
+Ustaw zmienną środowiskową (dozwala na tryb deweloperski) i uruchom aplikację:
+Bash# Ustawienie trybu deweloperskiego.
 
 # Dla Windows:
 $env:FLASK_ENV="development"
